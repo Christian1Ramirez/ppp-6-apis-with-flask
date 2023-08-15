@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reptiles</h1>
+    {% for reptile in reptiles %}
+    <p>
+        <h1>
+            {{ reptile.reptile_name }}
+        </h1>
+        <h2>
+            {{ reptile.reptile_fact }}
+        </h2>
+    </p>
+    {% endfor %}
+    <p>
+        <h1>Submit a Reptile Entry</h1>
+        <form action="/reptiles" method="post">
+            <label for="submitter">Submitter's Name:</label>
+            <input type="text" id="submitter" name="submitter" required>
+            <br>
+            <label for="reptile_id">Reptile ID:</label>
+            <textarea type="int" id="reptile_id" name="reptile_id" rows="1" cols="25" required></textarea>
+            <br>
+            <label for="reptile_name">Reptile Name:</label>
+            <textarea type="text" id="reptile_name" name="reptile_name" rows="1" cols="25" required></textarea>
+            <br>
+            <label for="reptile_fact">Reptile Fact:</label>
+            <textarea type="text" id="reptile_fact" name="reptile_fact" rows="1" cols="25" required></textarea>
+            <br>
+            <button type="submit">Submit Fact</button>
+        </form>
+    </p>
+</body>
+</html>
